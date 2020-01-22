@@ -94,20 +94,20 @@ You can require pawns (your colonists and other generated pawns) have certain tr
 So, this is saying mecha bretons get good piety when they kill enemies (they are pleasing their god.) Also, if you kill any of the mechs you get a bad opinion about it. Your god understands, you don't lose piety, but you feel bad about doing it.
 
 
-#### Avaliable defs for `<subject>` (you can stack multiple)
+#### *Avaliable defs*
+<dl>
+  <dt>OpinionThought</dt>
+  <dd>RoR_ThoughtOpinionBad</dd>
+  <dd>RoR_ThoughtOpinionGood</dd>
 
-**OpinionThought**
-RoR_ThoughtOpinionBad
-RoR_ThoughtOpinionGood
+  <dt>Thought</dt>
+  <dd>RoR_ThoughtKillBad</dd>
+  <dd>RoR_ThoughtKillGood</dd>
 
-**Thought**
-RoR_ThoughtKillBad
-RoR_ThoughtKillGood
-
-**Piety**
-RoR_PietyKillBad
-RoR_PietyKillGood
-
+  <dt>Piety</dt>
+  <dd>RoR_PietyKillBad</dd>
+  <dd>RoR_PietyKillGood</dd>
+</dl>
 
 ### Weapon Settings
 ```xml
@@ -129,11 +129,15 @@ RoR_PietyKillGood
 
 This is pretty straight forward. You get piety or opinion changes base on doing stuff with specified weapons.
 
-#### Avaliable defs
-**Thought**
-RoR_ThoughtWeaponKillBad
-RoR_ThoughtWeaponKillGood
+#### *Avaliable defs*
+<dl>
+  <dt>Thought</dt>
+  <dd>RoR_ThoughtWeaponKillBad</dd>
+  <dd>RoR_ThoughtWeaponKillGood</dd>
 
-**Piety**
-RoR_PietyWeaponKillBad
-RoR_PietyWeaponKillGood
+  <dt>Piety</dt>
+  <dd>RoR_PietyWeaponKillBad</dd>
+  <dd>RoR_PietyWeaponKillGood</dd>
+</dl>
+
+
