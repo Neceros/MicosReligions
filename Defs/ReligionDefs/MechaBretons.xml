@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ReligionsOfRimworld.ReligionDef>
+		<defName>MechaBretonHive</defName>
+		<label>Mecha Breton Hive</label>
+		<description>Transhumanists. Metalheads. This technologically minded religion worships the advnacement of humanity into the realms of technology and synthetic materials. The ultimate goal for each individual within the hive is to ascend into a pure robotic body.</description>
+		<settingsDefs>
+			<li>MBH_JoiningCriteriaSettings</li>
+			<li>MBH_KillSettings</li>
+		</settingsDefs>
+	</ReligionsOfRimworld.ReligionDef>
+
+	<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRJoiningCriteriaBase">
+	  <defName>MBH_JoiningCriteriaSettings</defName>
+	  <settings Class="ReligionsOfRimworld.ReligionSettings_JoiningCriteria">
+	    <criteria>
+	      <li Class="ReligionsOfRimworld.JoiningCriteria_Trait">
+	        <criteria>Transhumanist</criteria>
+	        <importance>Critical</importance>
+	        <shouldHave>true</shouldHave>
+	      </li>
+	      <li Class="ReligionsOfRimworld.JoiningCriteria_Hediff">
+	        <criteria>BionicEye</Criteria>
+	        <importance>Important</importance>
+	        <shouldHave>true</shouldHave>			
+	      </li>
+	      <li Class="ReligionsOfRimworld.JoiningCriteria_Gender">
+	        <criteria>Male</criteria>
+	        <importance>Low</importance>
+	        <shouldHave>true</shouldHave>
+	      </li>
+	    </criteria>
+	  </settings>
+	</ReligionsOfRimworld.ReligionSettingsDef>
+
+	<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRKillSettingsBase">
+		<defName>MBH_KillSettings</defName>
+		<settings Class="ReligionsOfRimworld.ReligionSettings_Social">	
+		<properties>
+			<li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
+				<propertyObject>Human</propertyObject>
+				<pawnCategory>Hostile</pawnCategory>
+				<subject>
+					<piety>RoR_PietyKillGood</piety>
+				</subject>
+			</li>
+			<li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
+				<propertyObject>Mech_Centipede</propertyObject>
+				<subject>
+					<piety>RoR_ThoughtKillBad</piety>
+				</subject>
+			</li>
+			<li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
+				<propertyObject>Mech_Lancer</propertyObject>
+				<subject>
+					<piety>RoR_ThoughtKillBad</piety>
+				</subject>
+			</li>
+			<li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
+				<propertyObject>Mech_Scyther</propertyObject>
+				<subject>
+					<piety>RoR_ThoughtKillBad</piety>
+				</subject>
+			</li>
+		</properties>		
+		</settings>
+	</ReligionsOfRimworld.ReligionSettingsDef>
+
+</Defs>
