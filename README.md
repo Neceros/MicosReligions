@@ -17,27 +17,34 @@ Each religion can have a set of variables which indicate what a pawn must do, ha
 
 You know how defs work. This stuff is probably self explainable. I've used Mecha Bretons are an example here, and this is all from my mind so obviously up for change.
 
-You'll see under `settingsDefs` there can be a list of defs we can point to, which will be all of our special rules for this religion. Right now you see `MBH_JoiningCriteriaSettings` listed there. This is just telling Religions of Rimworld (RoR) that it should look for defNames with the listed names. Let's show you want that would look like:
+You'll see under `settingsDefs` there can be a list of defs we can point to, which will be all of our special rules for this religion. Right now you see `MBH_JoiningCriteriaSettings` listed there. This is just telling Religions of Rimworld (RoR) that it should look for defNames with the listed names. 
 
+Let's see what that looks like:
 ```xml
 <ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRJoiningCriteriaBase">
-  <defName>MC_JoiningCriteriaSettings</defName>
+  <defName>MBH_JoiningCriteriaSettings</defName>
   <settings Class="ReligionsOfRimworld.ReligionSettings_JoiningCriteria">
     <criteria>
       <li Class="ReligionsOfRimworld.JoiningCriteria_Trait">
         <criteria>Transhumanist</criteria>
         <importance>Critical</importance>
+        <shouldHave>true</shouldHave>
       </li>
-      <li Class="ReligionsOfRimworld.JoiningCriteria_Trait">
-        <criteria>Industrious</criteria>
-        <importance>Standard</importance>
+      <li Class="ReligionsOfRimworld.JoiningCriteria_Hediff">
+        <criteria>BionicEye</Criteria>
+        <importance>Important</importance>
+        <shouldHave>true</shouldHave>			
       </li>
-      <li Class="ReligionsOfRimworld.JoiningCriteria_Trait">
-			  <shouldHave>false</shouldHave>
-			  <criteria>Kind</criteria>
-			  <importance>Important</importance>
-			</li>	
+      <li Class="ReligionsOfRimworld.JoiningCriteria_Gender">
+        <criteria>Male</criteria>
+        <importance>Low</importance>
+        <shouldHave>true</shouldHave>
+      </li>
     </criteria>
   </settings>
 </ReligionsOfRimworld.ReligionSettingsDef>	
 ```
+
+`shouldHave` is defaulted to true and can be omitted. `importance` can be Low, Standard, Important, and Critical. Low is default and can be omitted.
+
+You can require pawns (your colonists and other generated pawns) have certain traits, hediffs, and or gender.
