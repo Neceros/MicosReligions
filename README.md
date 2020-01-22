@@ -107,3 +107,33 @@ RoR_ThoughtKillGood
 **Piety**
 RoR_PietyKillBad
 RoR_PietyKillGood
+
+
+### Weapon Settings
+```xml
+<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRWeaponSettingsBase">
+  <defName>MBH_WeaponSettings</defName>
+  <settings Class="ReligionsOfRimworld.ReligionSettings_Social">	
+  <properties>
+    <li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
+      <propertyObject>Gun_ChargeRifle</propertyObject>
+      <subject>
+        <piety>RoR_PietyWeaponKillGood</piety>
+        <thought>RoR_ThoughtWeaponKillGood</thought>
+      </subject>	
+    </li>		
+  </properties>		
+  </settings>
+</ReligionsOfRimworld.ReligionSettingsDef>
+```
+
+This is pretty straight forward. You get piety or opinion changes base on doing stuff with specified weapons.
+
+#### Avaliable defs
+**Thought**
+RoR_ThoughtWeaponKillBad
+RoR_ThoughtWeaponKillGood
+
+**Piety**
+RoR_PietyWeaponKillBad
+RoR_PietyWeaponKillGood
