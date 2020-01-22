@@ -6,12 +6,12 @@ Each religion can have a set of variables which indicate what a pawn must do, ha
 ### ReligionDef [The start]
 ```xml
 <ReligionsOfRimworld.ReligionDef>
-		<defName>MechaBretonHive</defName>
-		<label>Mecha Breton Hive</label>
-		<description>Transhumanists. Metalheads. This technologically minded religion worships the advnacement of humanity into the realms of technology and synthetic materials. The ultimate goal for each individual within the hive is to ascend into a pure robotic body.</description>
-		<settingsDefs>
-			<li>MBH_JoiningCriteriaSettings</li>
-		</settingsDefs>
+  <defName>MechaBretonHive</defName>
+  <label>Mecha Breton Hive</label>
+  <description>Transhumanists. Metalheads. This technologically minded religion worships the advnacement of humanity into the realms of technology and synthetic materials. The ultimate goal for each individual within the hive is to ascend into a pure robotic body.</description>
+  <settingsDefs>
+    <li>MBH_JoiningCriteriaSettings</li>
+  </settingsDefs>
 </ReligionsOfRimworld.ReligionDef>
 ```
 
@@ -19,3 +19,25 @@ You know how defs work. This stuff is probably self explainable. I've used Mecha
 
 You'll see under `settingsDefs` there can be a list of defs we can point to, which will be all of our special rules for this religion. Right now you see `MBH_JoiningCriteriaSettings` listed there. This is just telling Religions of Rimworld (RoR) that it should look for defNames with the listed names. Let's show you want that would look like:
 
+```xml
+<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRJoiningCriteriaBase">
+  <defName>MC_JoiningCriteriaSettings</defName>
+  <settings Class="ReligionsOfRimworld.ReligionSettings_JoiningCriteria">
+    <criteria>
+      <li Class="ReligionsOfRimworld.JoiningCriteria_Trait">
+        <criteria>Transhumanist</criteria>
+        <importance>Critical</importance>
+      </li>
+      <li Class="ReligionsOfRimworld.JoiningCriteria_Trait">
+        <criteria>Industrious</criteria>
+        <importance>Standard</importance>
+      </li>
+      <li Class="ReligionsOfRimworld.JoiningCriteria_Trait">
+			  <shouldHave>false</shouldHave>
+			  <criteria>Kind</criteria>
+			  <importance>Important</importance>
+			</li>	
+    </criteria>
+  </settings>
+</ReligionsOfRimworld.ReligionSettingsDef>	
+```
