@@ -88,7 +88,8 @@ You can require pawns (your colonists and other generated pawns) have certain tr
     </li>
   </properties>		
   </settings>
-</ReligionsOfRimworld.ReligionSettingsDef>```
+</ReligionsOfRimworld.ReligionSettingsDef>
+```
 
 So, this is saying mecha bretons get good piety when they kill enemies (they are pleasing their god.) Also, if you kill any of the mechs you get a bad opinion about it. Your god understands, you don't lose piety, but you feel bad about doing it.
 
