@@ -7,6 +7,11 @@
 		<settingsDefs>
 			<li>MBH_JoiningCriteriaSettings</li>
 			<li>MBH_KillSettings</li>
+			<li>MBH_WeaponSettings</li>
+			<li>MBH_FoodSettings</li>
+			<li>MBH_OpinionSettings</li>
+			<li>MBH_KillSettings</li>
+			<li>MBH_KillSettings</li>
 		</settingsDefs>
 	</ReligionsOfRimworld.ReligionDef>
 
@@ -61,6 +66,66 @@
 				<subject>
 					<piety>RoR_ThoughtKillBad</piety>
 				</subject>
+			</li>
+		</properties>		
+		</settings>
+	</ReligionsOfRimworld.ReligionSettingsDef>
+
+	<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRWeaponSettingsBase">
+	  <defName>MBH_WeaponSettings</defName>
+	  <settings Class="ReligionsOfRimworld.ReligionSettings_Social">	
+	  <properties>
+	    <li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
+	      <propertyObject>Gun_ChargeRifle</propertyObject>
+	      <subject>
+	        <piety>RoR_PietyWeaponKillGood</piety>
+	        <thought>RoR_ThoughtWeaponKillGood</thought>
+	      </subject>	
+	    </li>		
+	  </properties>		
+	  </settings>
+	</ReligionsOfRimworld.ReligionSettingsDef>
+
+	<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRFoodSettingsBase">
+		<defName>MBH_FoodSettings</defName>
+		<settings Class="ReligionsOfRimworld.ReligionSettings_Social">	
+		<properties>
+			<li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
+				<propertyObject>Corpse_YorkshireTerrier</propertyObject>
+				<subject>
+					<piety>RoR_PietyFoodBad</piety>
+				</subject>
+			</li>
+			<li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
+				<propertyObject>Meat_YorkshireTerrier</propertyObject>
+				<subject>
+					<piety>RoR_PietyFoodBad</piety>
+				</subject>
+			</li>
+		</properties>		
+		</settings>
+	</ReligionsOfRimworld.ReligionSettingsDef>
+
+	<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoROpinionSettingsBase">
+		<defName>MBH_OpinionSettings</defName>
+		<settings Class="ReligionsOfRimworld.ReligionSettings_Social">	
+		<defaultProperty>
+			<witness>
+				<opinionThought>RoR_ThoughtOpinionBad</opinionThought>
+			</witness>			
+		</defaultProperty>
+		<properties>
+			<li Class="ReligionsOfRimworld.ReligionProperty_ReligionDef">
+				<propertyObject>ChurchofHONK</propertyObject>
+				<witness>
+					<opinionThought>RoR_ThoughtOpinionBad</opinionThought>
+				</witness>	
+			</li>
+			<li Class="ReligionsOfRimworld.ReligionProperty_ReligionDef">
+				<propertyObject>GoatboySociety</propertyObject>
+				<witness>
+					<opinionThought>RoR_ThoughtOpinionGood</opinionThought>
+				</witness>	
 			</li>
 		</properties>		
 		</settings>
