@@ -180,5 +180,19 @@
 		</settings>
 	</ReligionsOfRimworld.ReligionSettingsDef>
 
+	<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRDeathSettingsBase">
+		<defName>MBH_DeathSettings</defName>
+		<settings Class="ReligionsOfRimworld.ReligionSettings_Social">	
+		<properties>
+			<li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
+				<propertyObject>Human</propertyObject>
+				<witness>
+					<piety>RoR_PietyDeathGood</piety>
+				</witness>
+			</li>		
+		</properties>		
+		</settings>
+	</ReligionsOfRimworld.ReligionSettingsDef>
+
 
 </Defs>
