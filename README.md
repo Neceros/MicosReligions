@@ -1,6 +1,9 @@
 # Mico's Religions
 ## Mod for Religions of Rimworld
 
+
+#### Designed for Mico's Twitch Stream: [Check out Mico's twitch](https://www.twitch.tv/Micoinkwell)
+
 Each religion can have a set of variables which indicate what a pawn must do, have, or be in order to join a religion. There’s a lot of stuff to cover. 
 
 For a brief panic here’s the [full religion example](https://github.com/Neceros/MicosReligions/blob/master/Defs/ReligionDefs/MechaBretons.xml). Just check it over and then come back here and relax, because I’ll explain it.
@@ -103,6 +106,38 @@ So, this is saying mecha bretons get good piety when they kill enemies (they are
   <dt>Piety</dt>
   <dd>RoR_PietyKillBad</dd>
   <dd>RoR_PietyKillGood</dd>
+</dl>
+
+
+
+### Killing Settings
+```xml
+<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRDeathSettingsBase">
+  <defName>MBH_DeathSettings</defName>
+  <settings Class="ReligionsOfRimworld.ReligionSettings_Social">	
+  <properties>
+    <li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
+      <propertyObject>Human</propertyObject>
+      <witness>
+        <piety>RoR_PietyDeathGood</piety>
+      </witness>
+    </li>		
+  </properties>		
+  </settings>
+</ReligionsOfRimworld.ReligionSettingsDef>
+```
+
+Unlike Killing Settings, deaths are whenever anything dies and it doesn't matter who killed it. This example shows us that MechaBretons get good piety when any human dies.
+
+#### Avaliable defs
+<dl>
+  <dt>Thought</dt>
+  <dd>RoR_ThoughtDeathBad</dd>
+  <dd>RoR_ThoughtDeathGood</dd>
+
+  <dt>Piety</dt>
+  <dd>RoR_PietyDeathBad</dd>
+  <dd>RoR_PietyDeathGood</dd>
 </dl>
 
 
