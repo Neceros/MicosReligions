@@ -3,7 +3,7 @@
 
 Each religion can have a set of variables which indicate what a pawn must do, have, or be in order to join a religion. There’s a lot of stuff to cover. 
 
-For a brief panic here’s the [full religion example](https://github.com/basarab1504/ReligionsOfRimworld-2.0/wiki/RELIGION-DEF-EXAMPLE). Just check it over and then come back here and relax, because I’ll explain it.
+For a brief panic here’s the [full religion example](https://github.com/Neceros/MicosReligions/blob/master/Defs/ReligionDefs/MechaBretons.xml). Just check it over and then come back here and relax, because I’ll explain it.
 
 ### The Core
 ```xml
@@ -55,6 +55,7 @@ Let's see what that looks like:
 You can require pawns (your colonists and other generated pawns) have certain traits, hediffs, and or gender.
 
 
+
 ### Killing Settings
 ```xml
 <ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRKillSettingsBase">
@@ -88,21 +89,134 @@ You can require pawns (your colonists and other generated pawns) have certain tr
     </li>
   </properties>		
   </settings>
-</ReligionsOfRimworld.ReligionSettingsDef>```
+</ReligionsOfRimworld.ReligionSettingsDef>
+```
 
 So, this is saying mecha bretons get good piety when they kill enemies (they are pleasing their god.) Also, if you kill any of the mechs you get a bad opinion about it. Your god understands, you don't lose piety, but you feel bad about doing it.
 
+#### Avaliable defs
+<dl>
+  <dt>OpinionThought</dt>
+  <dd>RoR_ThoughtOpinionBad</dd>
+  <dd>RoR_ThoughtOpinionGood</dd>
 
-#### Avaliable defs for `<subject>` (you can stack multiple)
+  <dt>Thought</dt>
+  <dd>RoR_ThoughtKillBad</dd>
+  <dd>RoR_ThoughtKillGood</dd>
 
-**OpinionThought**
-RoR_ThoughtOpinionBad
-RoR_ThoughtOpinionGood
+  <dt>Piety</dt>
+  <dd>RoR_PietyKillBad</dd>
+  <dd>RoR_PietyKillGood</dd>
+</dl>
 
-**Thought**
-RoR_ThoughtKillBad
-RoR_ThoughtKillGood
 
-**Piety**
-RoR_PietyKillBad
-RoR_PietyKillGood
+
+### Weapon Settings
+```xml
+<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRWeaponSettingsBase">
+  <defName>MBH_WeaponSettings</defName>
+  <settings Class="ReligionsOfRimworld.ReligionSettings_Social">	
+  <properties>
+    <li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
+      <propertyObject>Gun_ChargeRifle</propertyObject>
+      <subject>
+        <piety>RoR_PietyWeaponKillGood</piety>
+        <thought>RoR_ThoughtWeaponKillGood</thought>
+      </subject>	
+    </li>		
+  </properties>		
+  </settings>
+</ReligionsOfRimworld.ReligionSettingsDef>
+```
+
+This is pretty straight forward. You get piety or opinion changes base on doing stuff with specified weapons.
+
+#### Avaliable defs
+<dl>
+  <dt>Thought</dt>
+  <dd>RoR_ThoughtWeaponKillBad</dd>
+  <dd>RoR_ThoughtWeaponKillGood</dd>
+
+  <dt>Piety</dt>
+  <dd>RoR_PietyWeaponKillBad</dd>
+  <dd>RoR_PietyWeaponKillGood</dd>
+</dl>
+
+
+
+### Food Settings
+```xml
+<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRFoodSettingsBase">
+  <defName>MBH_FoodSettings</defName>
+  <settings Class="ReligionsOfRimworld.ReligionSettings_Social">	
+  <properties>
+    <li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
+      <propertyObject>Corpse_YorkshireTerrier</propertyObject>
+      <subject>
+        <piety>RoR_PietyFoodBad</piety>
+      </subject>
+    </li>
+    <li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
+      <propertyObject>Meat_YorkshireTerrier</propertyObject>
+      <subject>
+        <piety>RoR_PietyFoodBad</piety>
+      </subject>
+    </li>
+  </properties>		
+  </settings>
+</ReligionsOfRimworld.ReligionSettingsDef>
+```
+
+This is pretty straight forward. You get piety or opinion changes based on eating something.
+
+#### Avaliable defs
+<dl>
+  <dt>Thought</dt>
+  <dd>RoR_ThoughtFoodBad</dd>
+  <dd>RoR_ThoughtFoodGood</dd>
+
+  <dt>Piety</dt>
+  <dd>RoR_PietyFoodBad</dd>
+  <dd>RoR_PietyFoodGood</dd>
+</dl>
+
+
+
+### Opinion Settings
+```xml
+<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoROpinionSettingsBase">
+  <defName>MBH_OpinionSettings</defName>
+  <settings Class="ReligionsOfRimworld.ReligionSettings_Social">	
+  <defaultProperty>
+    <witness>
+      <opinionThought>RoR_ThoughtOpinionBad</opinionThought>
+    </witness>			
+  </defaultProperty>
+  <properties>
+    <li Class="ReligionsOfRimworld.ReligionProperty_ReligionDef">
+      <propertyObject>ChurchofHONK</propertyObject>
+      <witness>
+        <opinionThought>RoR_ThoughtOpinionBad</opinionThought>
+      </witness>	
+    </li>
+    <li Class="ReligionsOfRimworld.ReligionProperty_ReligionDef">
+      <propertyObject>GoatboySociety</propertyObject>
+      <witness>
+        <opinionThought>RoR_ThoughtOpinionGood</opinionThought>
+      </witness>	
+    </li>
+  </properties>		
+  </settings>
+</ReligionsOfRimworld.ReligionSettingsDef>
+```
+
+Pawns have an opinion about each other depending on their deeds, bloodlines, and more. Religion can be an extra reason for your pawn to make on opinion about someone else. Pawns can like or dislike someone based on religion.
+
+Mecha bretons would dislike looking at a honker, but a good opnion of goatboys. If you specify a `defaultProperty`, you can omit the witness opinion in a `ReligionProperty_ReligionDef`listing.
+
+#### Avaliable defs
+<dl>
+  <dt>OpinionThought</dt>
+  <dd>RoR_ThoughtOpinionBad</dd>
+  <dd>RoR_ThoughtOpinionGood</dd>
+</dl>
