@@ -5,13 +5,20 @@
 		<label>Mecha Breton Hive</label>
 		<description>Transhumanists. Metalheads. This technologically minded religion worships the advnacement of humanity into the realms of technology and synthetic materials. The ultimate goal for each individual within the hive is to ascend into a pure robotic body.</description>
 		<settingsDefs>
+			<!-- These are defaults. We don't need to change these, really. But you can. -->
+			<li>RoR_NeedPietySettings</li>
+			<li>RoR_TalksSettings</li>
+			<li>RoR_IncidentsSettings</li>
+			<li>RoR_MentalBreaksSettings</li>
+			<!-- Custom stuff here -->
 			<li>MBH_JoiningCriteriaSettings</li>
 			<li>MBH_KillSettings</li>
 			<li>MBH_WeaponSettings</li>
 			<li>MBH_FoodSettings</li>
 			<li>MBH_OpinionSettings</li>
-			<li>MBH_KillSettings</li>
-			<li>MBH_KillSettings</li>
+			<li>MBH_ApparelSettings</li>
+			<li>MBH_WorshipSettings</li>
+			<li>MBH_AllowedBuildingsSettings</li>
 		</settingsDefs>
 	</ReligionsOfRimworld.ReligionDef>
 
@@ -130,5 +137,48 @@
 		</properties>		
 		</settings>
 	</ReligionsOfRimworld.ReligionSettingsDef>
+
+	<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRApparelSettingsBase">
+		<defName>MBH_ApparelSettings</defName>
+		<settings Class="ReligionsOfRimworld.ReligionSettings_Social">	
+		<properties>
+			<li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
+				<propertyObject>Plasteel</propertyObject>
+				<subject>
+					<piety>RoR_PietyApparelStuffGood</piety>
+				</subject>
+			</li>
+		</properties>		
+		</settings>
+	</ReligionsOfRimworld.ReligionSettingsDef>
+
+	<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRWorshipSettingsBase">
+		<defName>MBH_WorshipSettings</defName>
+		<settings Class="ReligionsOfRimworld.ReligionSettings_ReligionActivity">	
+			<properties>
+				<li Class="ReligionsOfRimworld.ReligionProperty_ActivityTaskDef">
+					<propertyObject>RoR_TaskWorship</propertyObject>
+					<subject>
+						<piety>RoR_PietyWorshipAverage</piety>
+					</subject>
+					<witness>
+						<piety>RoR_PietyWorshipSmall</piety>
+					</witness>
+				</li>	
+			</properties>
+		</settings>
+	</ReligionsOfRimworld.ReligionSettingsDef>
+
+	<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRAllowedBuildingsSettingsBase">
+		<defName>MBH_AllowedBuildingsSettings</defName>
+		<settings Class="ReligionsOfRimworld.ReligionSettings_AllowedBuildings">	
+		<allowedBuildings>
+			<li>AltarWithBook</li>
+			<li>WorshipSpot</li>
+			<li>FabricationBench</li>
+		</allowedBuildings>	
+		</settings>
+	</ReligionsOfRimworld.ReligionSettingsDef>
+
 
 </Defs>
