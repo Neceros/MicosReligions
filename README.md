@@ -236,7 +236,9 @@ Mecha bretons would dislike looking at a honker, but a good opnion of goatboys. 
 </ReligionsOfRimworld.ReligionSettingsDef>
 ```
 
-Define apparel you want to affect your pawn. The amount of clothes on the pawn multiplies the effect. I still don't know a whole lot about this section. Will update later.
+Define apparel you want to affect your pawn. The amount of clothes on the pawn multiplies the effect. 
+
+As far as I can tell the above xml will give your pawn good piety when wearing anything made of plasteel. I still don't know a whole lot about this section. Will update later.
 
 #### Avaliable defs
 <dl>
