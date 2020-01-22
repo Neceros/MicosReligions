@@ -72,19 +72,19 @@ You can require pawns (your colonists and other generated pawns) have certain tr
     <li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
       <propertyObject>Mech_Centipede</propertyObject>
       <subject>
-        <piety>RoR_ThoughtKillBad</piety>
+        <thought>RoR_ThoughtKillBad</thought>
       </subject>
     </li>
     <li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
       <propertyObject>Mech_Lancer</propertyObject>
       <subject>
-        <piety>RoR_ThoughtKillBad</piety>
+        <thought>RoR_ThoughtKillBad</thought>
       </subject>
     </li>
     <li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
       <propertyObject>Mech_Scyther</propertyObject>
       <subject>
-        <piety>RoR_ThoughtKillBad</piety>
+        <thought>RoR_ThoughtKillBad</thought>
       </subject>
     </li>
   </properties>		
@@ -96,10 +96,6 @@ So, this is saying mecha bretons get good piety when they kill enemies (they are
 
 #### Avaliable defs
 <dl>
-  <dt>OpinionThought</dt>
-  <dd>RoR_ThoughtOpinionBad</dd>
-  <dd>RoR_ThoughtOpinionGood</dd>
-
   <dt>Thought</dt>
   <dd>RoR_ThoughtKillBad</dd>
   <dd>RoR_ThoughtKillGood</dd>
