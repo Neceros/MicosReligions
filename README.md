@@ -3,7 +3,7 @@
 
 Each religion can have a set of variables which indicate what a pawn must do, have, or be in order to join a religion. There’s a lot of stuff to cover. 
 
-For a brief panic here’s the [full religion example](https://github.com/basarab1504/ReligionsOfRimworld-2.0/wiki/RELIGION-DEF-EXAMPLE). Just check it over and then come back here and relax, because I’ll explain it.
+For a brief panic here’s the [full religion example](https://github.com/Neceros/MicosReligions/blob/master/Defs/ReligionDefs/MechaBretons.xml). Just check it over and then come back here and relax, because I’ll explain it.
 
 ### The Core
 ```xml
