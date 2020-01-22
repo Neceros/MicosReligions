@@ -216,3 +216,39 @@ Mecha bretons would dislike looking at a honker, but a good opnion of goatboys. 
   <dd>RoR_ThoughtOpinionBad</dd>
   <dd>RoR_ThoughtOpinionGood</dd>
 </dl>
+
+
+
+### Apparel Settings
+```xml
+<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRApparelSettingsBase">
+  <defName>MBH_ApparelSettings</defName>
+  <settings Class="ReligionsOfRimworld.ReligionSettings_Social">	
+  <properties>
+    <li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
+      <propertyObject>Plasteel</propertyObject>
+      <subject>
+        <piety>RoR_PietyApparelStuffGood</piety>
+      </subject>
+    </li>
+  </properties>		
+  </settings>
+</ReligionsOfRimworld.ReligionSettingsDef>
+```
+
+Define apparel you want to affect your pawn. The amount of clothes on the pawn multiplies the effect. I still don't know a whole lot about this section. Will update later.
+
+#### Avaliable defs
+<dl>
+  <dt>Thought</dt>
+  <dd>RoR_ThoughtApparelBad</dd>
+  <dd>RoR_ThoughtApparelGood</dd>
+  <dd>RoR_ThoughtApparelStuffBad</dd>
+  <dd>RoR_ThoughtApparelStuffGood</dd>
+  
+  <dt>Piety</dt>
+  <dd>RoR_PietyApparelBad</dd>
+  <dd>RoR_PietyApparelGood</dd>
+  <dd>RoR_PietyApparelStuffBad</dd>
+  <dd>RoR_PietyApparelStuffGood</dd>
+</dl>
