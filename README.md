@@ -254,3 +254,47 @@ As far as I can tell the above xml will give your pawn good piety when wearing a
   <dd>RoR_PietyApparelStuffBad</dd>
   <dd>RoR_PietyApparelStuffGood</dd>
 </dl>
+
+
+
+### Worship Settings
+```xml
+<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRWorshipSettingsBase">
+  <defName>MBH_WorshipSettings</defName>
+  <settings Class="ReligionsOfRimworld.ReligionSettings_ReligionActivity">	
+    <properties>
+      <li Class="ReligionsOfRimworld.ReligionProperty_ActivityTaskDef">
+        <propertyObject>RoR_TaskWorship</propertyObject>
+        <subject>
+          <piety>RoR_PietyWorshipAverage</piety>
+        </subject>
+        <witness>
+          <piety>RoR_PietyWorshipSmall</piety>
+        </witness>
+      </li>	
+    </properties>
+  </settings>
+</ReligionsOfRimworld.ReligionSettingsDef>
+```
+
+Honestly I don't know what this does. All the religions are like this so... I just copied them. There doesn't seem to be any documentation on it.
+
+
+
+### Buildings Settings
+```xml
+<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRAllowedBuildingsSettingsBase">
+  <defName>MC_AllowedBuildingsSettings</defName>
+  <settings Class="ReligionsOfRimworld.ReligionSettings_AllowedBuildings">	
+  <allowedBuildings>
+    <li>AltarWithBook</li>
+    <li>WorshipSpot</li>
+    <li>FabricationBench</li>
+  </allowedBuildings>	
+  </settings>
+</ReligionsOfRimworld.ReligionSettingsDef>
+```
+
+Religious pawns need to pray and worship at specified buildings, in order to gain piety, good thoughts, and stuff.
+
+Just list the building defNames, like above.
