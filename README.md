@@ -2,8 +2,7 @@
 ## Mod for Religions of Rimworld
 
 
-#### Designed for Mico's Twitch Stream
-[Check out Mico's twitch](https://www.twitch.tv/Micoinkwell)
+#### Designed for Mico's Twitch Stream: [Check out Mico's twitch](https://www.twitch.tv/Micoinkwell)
 
 Each religion can have a set of variables which indicate what a pawn must do, have, or be in order to join a religion. There’s a lot of stuff to cover. 
 
