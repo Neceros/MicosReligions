@@ -3,7 +3,7 @@
 
 Each religion can have a set of variables which indicate what a pawn must do, have, or be in order to join a religion. There’s a lot of stuff to cover. For a brief panic here’s an [example religion template](https://github.com/basarab1504/ReligionsOfRimworld-2.0/wiki/RELIGION-DEF-EXAMPLE). Just check it over and then come back here I’ll explain it.
 
-### ReligionDef [The start]
+### The Core
 ```xml
 <ReligionsOfRimworld.ReligionDef>
   <defName>MechaBretonHive</defName>
@@ -20,6 +20,9 @@ You know how defs work. This stuff is probably self explainable. I've used Mecha
 You'll see under `settingsDefs` there can be a list of defs we can point to, which will be all of our special rules for this religion. Right now you see `MBH_JoiningCriteriaSettings` listed there. This is just telling Religions of Rimworld (RoR) that it should look for defNames with the listed names. 
 
 Let's see what that looks like:
+
+
+### Joining Criteria
 ```xml
 <ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRJoiningCriteriaBase">
   <defName>MBH_JoiningCriteriaSettings</defName>
@@ -48,3 +51,56 @@ Let's see what that looks like:
 `shouldHave` is defaulted to true and can be omitted. `importance` can be Low, Standard, Important, and Critical. Low is default and can be omitted.
 
 You can require pawns (your colonists and other generated pawns) have certain traits, hediffs, and or gender.
+
+
+### Killing Settings
+```xml
+<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRKillSettingsBase">
+  <defName>MBH_KillSettings</defName>
+  <settings Class="ReligionsOfRimworld.ReligionSettings_Social">	
+  <properties>
+    <li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
+      <propertyObject>Human</propertyObject>
+      <pawnCategory>Hostile</pawnCategory>
+      <subject>
+        <piety>RoR_PietyKillGood</piety>
+      </subject>
+    </li>
+    <li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
+      <propertyObject>Mech_Centipede</propertyObject>
+      <subject>
+        <piety>RoR_ThoughtKillBad</piety>
+      </subject>
+    </li>
+    <li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
+      <propertyObject>Mech_Lancer</propertyObject>
+      <subject>
+        <piety>RoR_ThoughtKillBad</piety>
+      </subject>
+    </li>
+    <li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
+      <propertyObject>Mech_Scyther</propertyObject>
+      <subject>
+        <piety>RoR_ThoughtKillBad</piety>
+      </subject>
+    </li>
+  </properties>		
+  </settings>
+</ReligionsOfRimworld.ReligionSettingsDef>```
+
+So, this is saying mecha bretons get good piety when they kill enemies (they are pleasing their god.) Also, if you kill any of the mechs you get a bad opinion about it. Your god understands, you don't lose piety, but you feel bad about doing it.
+
+
+#### Avaliable defs for `<subject>` (you can stack multiple)
+
+**OpinionThought**
+RoR_ThoughtOpinionBad
+RoR_ThoughtOpinionGood
+
+**Thought**
+RoR_ThoughtKillBad
+RoR_ThoughtKillGood
+
+**Piety**
+RoR_PietyKillBad
+RoR_PietyKillGood
