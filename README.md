@@ -110,6 +110,38 @@ So, this is saying mecha bretons get good piety when they kill enemies (they are
 
 
 
+### Killing Settings
+```xml
+<ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRDeathSettingsBase">
+  <defName>MBH_DeathSettings</defName>
+  <settings Class="ReligionsOfRimworld.ReligionSettings_Social">	
+  <properties>
+    <li Class="ReligionsOfRimworld.ReligionProperty_ThingDef">
+      <propertyObject>Human</propertyObject>
+      <witness>
+        <piety>RoR_PietyDeathGood</piety>
+      </witness>
+    </li>		
+  </properties>		
+  </settings>
+</ReligionsOfRimworld.ReligionSettingsDef>
+```
+
+Unlike Killing Settings, deaths are whenever anything dies and it doesn't matter who killed it. This example shows us that MechaBretons get good piety when any human dies.
+
+#### Avaliable defs
+<dl>
+  <dt>Thought</dt>
+  <dd>RoR_ThoughtDeathBad</dd>
+  <dd>RoR_ThoughtDeathGood</dd>
+
+  <dt>Piety</dt>
+  <dd>RoR_PietyDeathBad</dd>
+  <dd>RoR_PietyDeathGood</dd>
+</dl>
+
+
+
 ### Weapon Settings
 ```xml
 <ReligionsOfRimworld.ReligionSettingsDef ParentName="RoRWeaponSettingsBase">
